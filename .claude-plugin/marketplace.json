@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-marketplace.json",
+  "name": "vibesearch",
+  "version": "0.2.0",
+  "description": "VibeSearch: the complete SEO toolkit for Claude Code. Fixes, not findings, across Google, Maps, and AI search.",
+  "owner": {
+    "name": "Tim Martin",
+    "url": "https://vibesearch.co"
+  },
+  "plugins": [
+    {
+      "name": "vibesearch",
+      "source": "./",
+      "description": "Complete SEO toolkit that ships fixes, not findings. Ten commands cover the whole job: audits with paste-ready fixes, keyword maps, AI-citable content, internal link insertion lists, competitor teardowns, local SEO execution, Search Console analysis with zero OAuth, capacity-sized strategy, and drift monitoring. Zero dependencies, built-in memory.",
+      "category": "marketing",
+      "keywords": ["seo", "ai-search", "geo", "keywords", "local-seo", "search-console", "schema", "content", "internal-links", "marketing"]
+    }
+  ]
+}
