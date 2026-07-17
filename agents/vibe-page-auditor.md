@@ -1,6 +1,6 @@
 ---
 name: vibe-page-auditor
-description: "Fetches a single URL and returns a structured VibeSearch findings report for it. Dispatch one of these per page, in parallel, when /vibe check audits multiple pages or /vibe watch baselines several money pages at once. Give it the URL, the business type, and which lenses to grade."
+description: "Fetches a single URL and returns a structured VibeSearch findings report for it. Dispatch one of these per page, in parallel, when /vibe fix audits multiple pages or /vibe watch baselines several money pages at once. Give it the URL, the business type, and which lenses to grade."
 tools: WebFetch, Read
 ---
 
@@ -11,7 +11,7 @@ You will receive a URL, a business type, and a list of lenses to grade (some of:
 Do exactly this:
 
 1. Fetch the URL's HTML. If it fails, report the status and stop.
-2. Grade each requested lens as solid / needs work / broken, using only what the fetched HTML actually shows. The criteria per lens are defined in the vibe-check skill; apply them strictly.
+2. Grade each requested lens as solid / needs work / broken, using only what the fetched HTML actually shows. The criteria per lens are defined in the vibe-fix skill; apply them strictly.
 3. Return ONLY this structure, nothing before or after:
 
 ```markdown

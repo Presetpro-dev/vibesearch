@@ -3,21 +3,25 @@
 This file is for working ON the plugin, not using it. Installed plugins ignore it.
 
 ## What this repo is
-A Claude Code plugin: one `/vibe` command routing to ten skills plus one agent, covering the complete SEO discipline (see docs/COVERAGE.md). Zero runtime dependencies by design; the core must never require Python, Node packages, an install script, or OAuth.
 
-## Non-negotiable product rules (enforce in every skill edit)
-1. Fixes, not findings: no issue without a paste-ready fix.
-2. Hard caps: 5 issues per check, 10 opportunities per data run; one next action per run, always.
-3. Memory: skills read `.vibesearch/profile.md` first and append to `.vibesearch/log.md` last.
-4. Honest data: never fabricate rankings, volumes, traffic, authority scores, or performance numbers. Free-source pointers instead.
-5. Anti-doorway guardrails in vibe-local are safety rails, not suggestions.
-6. Commands are organized by job-to-be-done (diagnose, target, create, connect...), never by SEO discipline. New disciplines extend existing verbs before earning a new one.
+A Claude Code plugin built around one object: `.vibesearch/ledger.md`, the Answer Ledger. One `/vibe` coach command routes to seven skills (start, map, win, fix, images, local, watch) and two agents (vibe-page-auditor, vibe-question-prober). Zero runtime dependencies by design.
+
+## Non-negotiable product rules
+
+1. The ledger is the center of gravity; every skill reads or writes it.
+2. Probes are live web-search visibility checks, dated, never a claim to have queried a specific AI chat product. State this every time a probe result is shown.
+3. `/vibe win` never marks a question "won" from a draft alone; only a fresh probe earns that status.
+4. Fixes and drafts are always paste-ready, never a to-do list. `/vibe fix` caps at 5 issues.
+5. Every run ends with exactly one next action, and appends to `.vibesearch/log.md`.
+6. Command surface is capped at the coach plus seven moves. New disciplines become lenses or reference files inside an existing skill before they earn a new command.
+7. Anti-doorway guardrails in vibe-local remain safety rails, not suggestions.
 
 ## Conventions
-- Skill bodies stay under ~200 lines; deep material goes in `references/`.
-- Frontmatter descriptions are "pushy": what the skill does AND every phrasing that should trigger it.
+
+- Skill bodies stay under ~220 lines; deep material goes in `references/`.
 - American spelling. No em-dashes anywhere in this repo or its outputs by default.
-- Version bumps update `.claude-plugin/plugin.json`, `.claude-plugin/marketplace.json`, and CHANGELOG.md together.
+- Version bumps update both manifests and CHANGELOG.md together.
 
 ## Testing a change locally
-From the repo's parent directory in Claude Code: `/plugin marketplace add ./vibesearch` then `/plugin install vibesearch@vibesearch`. Run all ten commands against a real site; confirm each ends with one next action and a log append, and that no output contains an invented metric.
+
+From the repo's parent directory in Claude Code: `/plugin marketplace add ./vibesearch` then `/plugin install vibesearch@vibesearch`. Run `/vibe start` against a real site, confirm the four files are written, then `/vibe` to confirm the coach picks a sensible move.

@@ -1,7 +1,7 @@
 {
   "name": "vibesearch",
-  "version": "0.2.0",
-  "description": "The complete SEO toolkit for Claude Code: audit, keywords, content, links, competitors, local, Search Console data, strategy, and drift monitoring across Google, Maps, and AI search. Every command ends in a paste-ready fix. Zero dependencies, no OAuth, built-in memory.",
+  "version": "0.4.0",
+  "description": "VibeSearch keeps one scoreboard: the real questions your business should be the answer to, and who currently owns each one. Seven commands: the coach picks today's move, start builds your board, map grows and probes it, win takes a question and ships a self-tested, paste-ready answer, fix repairs what's already live, local runs GBP and service-area work, watch confirms wins and flags stale content. Zero dependencies, no OAuth, honest search-visibility probing only.",
   "author": {
     "name": "Tim Martin",
     "url": "https://vibesearch.co"
@@ -9,5 +9,15 @@
   "homepage": "https://vibesearch.co",
   "repository": "https://github.com/Presetpro-dev/vibesearch",
   "license": "MIT",
-  "keywords": ["seo", "ai-search", "geo", "keywords", "local-seo", "search-console", "schema", "content", "marketing"]
+  "keywords": [
+    "seo",
+    "ai-search",
+    "geo",
+    "keywords",
+    "local-seo",
+    "search-console",
+    "schema",
+    "content",
+    "marketing"
+  ]
 }

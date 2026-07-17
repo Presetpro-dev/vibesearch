@@ -7,7 +7,7 @@ description: "VibeSearch local search execution engine. Produces the actual loca
 
 Audit tools tell local businesses what is wrong. This skill does the work. Every subcommand ends in a shippable artifact.
 
-Read `.vibesearch/profile.md` first. The exact business name, address, and phone (NAP) in the profile are canon: every artifact uses them character-for-character. If no profile exists, collect NAP before anything else, then offer setup at the end.
+Read `.vibesearch/profile.md` (voice, goal) and `.vibesearch/entity.md` (the canonical NAP) first. The exact business name, address, and phone in `entity.md` are canon: every artifact uses them character-for-character. If neither file exists, collect NAP before anything else, then offer `/vibe start` at the end.
 
 Route on the argument after `local`:
 
@@ -38,7 +38,7 @@ For each approved location, produce: full page copy in the profile voice (unique
 
 ## `citations` — NAP consistency kit
 
-Produce two artifacts: (1) the canonical NAP block from the profile, formatted exactly as it must appear everywhere, plus common wrong variants to hunt down (old address, tracking numbers, Ste vs Suite); (2) a prioritized checklist of the core citation surfaces to verify by hand: Google Business Profile, Apple Business Connect, Bing Places, Facebook, Yelp, then the user's industry and country directories (ask which country; for Canada include Yellow Pages Canada and 411.ca). Be honest that submission is manual work or a paid service; the kit makes it a checklist instead of a project.
+Produce two artifacts: (1) the canonical NAP block from `entity.md`, formatted exactly as it must appear everywhere, plus common wrong variants to hunt down (old address, tracking numbers, Ste vs Suite); (2) a prioritized checklist of the core citation surfaces to verify by hand: Google Business Profile, Apple Business Connect, Bing Places, Facebook, Yelp, then the user's industry and country directories (ask which country; for Canada include Yellow Pages Canada and 411.ca). Be honest that submission is manual work or a paid service; the kit makes it a checklist instead of a project.
 
 ## `schema` — LocalBusiness JSON-LD
 

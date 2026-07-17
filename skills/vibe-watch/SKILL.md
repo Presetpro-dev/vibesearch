@@ -1,13 +1,21 @@
 ---
 name: vibe-watch
-description: "VibeSearch drift monitoring. Snapshots a page's SEO-critical elements to plain markdown now, diffs against it later, and flags what changed with severity. Use whenever the user runs /vibe watch, asks what changed on a page, wants to monitor a site for SEO regressions, suspects a plugin/theme/redesign broke something, or wants a baseline before making changes."
+description: "VibeSearch drift monitoring and the loop-closer. Snapshots a page's SEO-critical elements to plain markdown now, diffs against it later, and flags what changed with severity. Also re-probes the Answer Ledger to check whether questions shipped via /vibe win actually flipped to won, and runs the citation-freshness refresh calendar. Use whenever the user runs /vibe watch, asks what changed on a page, wants to check if a shipped page won its question yet, suspects a plugin/theme/redesign broke something, wants a baseline before making changes, or asks what content needs refreshing."
 ---
 
 # VibeSearch Watch
 
-Git-style change tracking for on-page SEO, stored as human-readable markdown files you can read, edit, and commit. No database.
+Git-style change tracking for on-page SEO, stored as human-readable markdown files you can read, edit, and commit. No database. This is also where a win gets confirmed: `/vibe win` ships an answer, `/vibe watch` is what tells you it actually landed.
 
 Route on the argument after `watch`:
+
+## `reprobe [question]` — did the win land?
+
+The loop-closer. Delegates to `vibe-map reprobe`: re-runs `vibe-question-prober` on every ledger row marked "probing," or on one named question, and updates status to won, contesting, or still unowned based on today's fresh result, never from the shipped draft alone. Report only real movement. This is the natural default to run a few weeks after any `/vibe win`.
+
+## `refresh` — the freshness calendar
+
+Citation eligibility fades with age; content answering a question well six months ago can quietly stop being cited as newer material overtakes it. Scan `.vibesearch/ledger.md` for "won" questions whose underlying page hasn't been touched (per the sitemap's lastmod, or the most recent snapshot) in 90+ days, and flag them for a real refresh, meaning new facts, new numbers, or new proof added, never just a bumped date with no real change. Output a short prioritized list: question, page, last touched, what's likely gone stale.
 
 ## `baseline <url>` — snapshot now
 
@@ -49,7 +57,7 @@ Baseline {date} → today
 {One or two sentences: nothing to worry about / fix X before it costs you.}
 ```
 
-Every 🔴 comes with its paste-ready fix, same standard as `/vibe check`: usually "restore this exact previous value", which the snapshot conveniently contains verbatim. Then append the new state as a fresh dated section so the history stays continuous.
+Every 🔴 comes with its paste-ready fix, same standard as `/vibe fix`: usually "restore this exact previous value", which the snapshot conveniently contains verbatim. Then append the new state as a fresh dated section so the history stays continuous.
 
 ## `history <url>` — the timeline
 

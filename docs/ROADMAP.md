@@ -1,22 +1,26 @@
 # Roadmap
 
-The core promise never changes: free, MIT, zero dependencies, fixes not findings, no invented numbers.
+Free, MIT, zero dependencies, honest data, forever. The command surface is capped at seven; depth grows inside skills, not by adding new top-level commands.
 
-## v0.3 candidates
-- **Google data tier (optional, bring-your-own key):** PageSpeed Insights API for real field CWV, Search Console API for automated pulls. CSV export stays the default; keys are for people who want automation.
-- **WordPress adapter:** fixes output as exact Yoast field values and Classic editor HTML; detect WooCommerce/Flatsome and adapt shortcodes.
-- **/vibe pitch:** turn a check or data run into a client-ready one-page proposal with scope and pricing slots (for freelancers and agencies selling the work).
+## Shipped in v0.4
 
-## v0.4 candidates
-- **E-commerce deep module:** full Product/Offer/merchant validation, category page strategy, marketplace intelligence.
-- **Migrations & redirects flow:** pre-migration baseline (via /vibe watch), redirect map generation, post-launch diff.
-- **International/hreflang module** with generation and validation.
-- **Programmatic SEO** with hard quality gates (unique data per page or no page).
-- **Optional MCP extensions:** DataForSEO, Ahrefs, Firecrawl for those who have them; never required.
-- **Snapshot scheduling recipes:** cron/CI examples running /vibe watch compare weekly.
+The Answer Ledger, the coach, honest search-visibility probing, the entity dossier, the proof inventory, sprint mode, self-testing drafts, the win-then-verify loop via `/vibe watch reprobe`.
+
+## v0.5 candidates
+
+- E-commerce depth inside `/vibe win` and `/vibe fix`: Product/Offer schema, Merchant Center AI-media labeling, marketplace-aware ship-kits — this is the highest-priority gap, and the one that demos best on a real WooCommerce store
+- The public probe widget on vibesearch.co: one free live check, no login, the "you're invisible" moment as a lead magnet
+- Reference-site tone extraction polish inside `/vibe start`
+
+## v0.6 candidates
+
+- Hreflang/international as a `/vibe fix` lens for multi-language sites
+- A satisfaction/SXO pass: does the page actually satisfy the click, not just answer the question
+- Deeper automated refresh scheduling inside `/vibe watch`, tied to citation-freshness research
 
 ## Principles for accepting features
-1. Does it end in something shippable?
+
+1. Does it make the ledger more accurate or more actionable?
 2. Does it work with zero setup for the default user?
-3. Does it survive the 5-issue / one-next-action philosophy, or is it a dashboard in disguise?
-4. Would it require inventing a number? Then it waits for a real data source.
+3. Would it survive the one-next-action philosophy, or is it a dashboard in disguise?
+4. Would it require inventing a number, or claiming access to a specific AI product's output? Then it doesn't ship.
